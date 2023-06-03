@@ -43,6 +43,13 @@ namespace ConsoleApp
 
             logger.LogDebug($"{nameof(MoveFolderAcrosDriveOption)} : Moved 'tomove' folder to 'archive' drive. Destination folder id: {sourceFolder.Id}");
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="driveId"></param>
+        /// <param name="path"></param>
+        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When the path not found</exception>
+        /// <returns></returns>
         async private Task<DriveItem> GetFolderByPath(string driveId, string path)
         {
             var child = await graphServiceClient.Drives[driveId].Root.ItemWithPath(path).GetAsync();
@@ -54,7 +61,7 @@ namespace ConsoleApp
         /// </summary>
         /// <param name="driveName"></param>
         /// <returns></returns>
-        /// <exception cref="Exception">When drive not found</exception>
+        /// <exception cref="InvalidOperationException">When drive not found</exception>
         /// <remarks>As of now Graph API does not support filtering in the request. Get all drives and filter client side.
         /// https://learn.microsoft.com/en-us/graph/api/drive-get?view=graph-rest-1.0&tabs=http
         /// https://learn.microsoft.com/en-us/graph/api/drive-list?view=graph-rest-1.0&tabs=http
