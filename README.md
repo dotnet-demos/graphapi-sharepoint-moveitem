@@ -1,4 +1,10 @@
 # Demos how drive item can be moved between SharePoint Drives using Graph API via GraphSDK for .Net
+This is to show some fun in Graph API. Readers are allowed to decide its fun or lack of quality after testing.
+
+# Requirement
+Move a folder from one SharePoint drive to another drive in same site.
+
+# Current state
 The documentation of Graph API says the Patch on drive item cannot be used to move between drives. But it is working.
 
 > When tried in different environments it failed when moving folder with large sized files in it. The exception was item not found. But behind the scene it really worked.
