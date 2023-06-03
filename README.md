@@ -5,13 +5,22 @@ This is to show some fun in Graph API. Readers are allowed to decide its fun or 
 Move a folder from one SharePoint drive to another drive in same site.
 
 # Current state
-The documentation of Graph API says the Patch on drive item cannot be used to move between drives. But it is working.
+As of this commit, the documentation of Graph API says the [Patch on drive item cannot be used to move between drives](https://learn.microsoft.com/en-us/graph/api/driveitem-move?view=graph-rest-1.0&tabs=http). 
+![Documentation](images/00-doc.png)
 
-> When tried in different environments it failed when moving folder with large sized files in it. The exception was item not found. But behind the scene it really worked.
+But it is working!!!
+
+Often times the code and documentation will not be in sync. There are chances that the check is not implemented by API by relying solely on documentation and assuming users will not misuse.
+
+> When tried in different environments, it failed when moving folder with large sized files in it. The exception was item not found. But behind the scene it really worked.
 
 > :warning: Be cautious with undocumented features as Microsoft themselves cannot help, if we get stuck in production.
 
 :white_check_mark: Workaround is to use the equivalent CSOM SharePoint APIs via [PnP SDKs](https://github.com/pnp/pnpcore).
+
+# What is the hack
+
+Just add the drive id to the patch request.
 
 # How to run
 - Prepare SharePoint site
