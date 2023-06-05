@@ -4,6 +4,8 @@ This is to show some fun in Graph API. Readers are allowed to decide its fun or 
 # Requirement
 Move a folder from one SharePoint drive to another drive in same site.
 
+> The id of folder should not change.
+
 # Current state
 As of this commit, the documentation of Graph API says the [Patch on drive item cannot be used to move between drives](https://learn.microsoft.com/en-us/graph/api/driveitem-move?view=graph-rest-1.0&tabs=http). 
 ![Documentation](images/00-doc.png)
