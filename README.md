@@ -21,6 +21,32 @@ Often times the code and documentation will not be in sync. There are chances th
 # What is the hack
 
 Just add the drive id to the patch request.
+## Request as per documentation
+
+```javascript
+{
+	"parentReference":
+	{
+		"id":"<new-parent-folder-id>"
+	},
+	"name":"",
+	
+}
+```
+## Request with drive id
+The undocumented request payload
+
+```javascript
+{
+	"parentReference":
+	{
+		"id":"<new-parent-folder-id>",
+		"driveId":"<destination drive id>"
+	},
+	"name":"",
+}
+
+```
 
 # How to run
 - Prepare SharePoint site
