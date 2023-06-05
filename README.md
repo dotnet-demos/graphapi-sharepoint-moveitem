@@ -21,7 +21,11 @@ Often times the code and documentation will not be in sync. There are chances th
 # What is the hack
 
 Just add the drive id to the patch request.
+
 ## Request as per documentation
+
+PATCH /me/drive/items/{item-id}
+Content-type: application/json
 
 ```javascript
 {
@@ -35,6 +39,9 @@ Just add the drive id to the patch request.
 ```
 ## Request with drive id
 The undocumented request payload
+
+PATCH /me/drive/items/{item-id}
+Content-type: application/json
 
 ```javascript
 {
